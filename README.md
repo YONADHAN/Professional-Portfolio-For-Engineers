@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+## 🧭 Overall Format
 
-## Getting Started
+A **one-page scroll website** with a **fixed navbar**, each section linked via smooth scroll (`react-scroll` or `framer-motion` + anchor links).
+Design priority → **minimalist, engineering-focused**, with a subtle tech theme (dark/gray + accent color like teal or blue).
+---
 
-First, run the development server:
+## 🔹 Section Breakdown (matching yonadhan.online style)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. **Hero Section (Landing)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Purpose:** First impression + quick identity.
+**Content:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Full name: **Athil Shaji**
+- Title: “VLSI & Microsystems Engineer”
+- Short tagline: “Passionate about microelectronics, ASIC design, and embedded systems.”
+- Buttons:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  - 🔗 “Download CV”
+  - 📧 “Contact Me”
+  - 🔗 LinkedIn button
 
-## Learn More
+- Optional background animation (gradient mesh or particle animation like `react-tsparticles`)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. **About Section**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Purpose:** Give a professional summary and personality touch.
+**Content:**
 
-## Deploy on Vercel
+- Paragraph from resume’s “Summary” section rewritten conversationally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  > I’m an Electronics and Communication Engineer specializing in VLSI and Microsystems with a strong foundation in microelectronics and hardware design. I enjoy exploring ASIC and sensor technologies that bridge innovation and real-world applications.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add a profile photo or subtle circuit-themed illustration.
+- Show key facts:
+
+  - 🎓 M.Tech at IIST (8.41 CGPA)
+  - 💡 Researcher in MEMS & VLSI systems
+  - 📍 Based in Kerala, India
+
+---
+
+### 3. **Education Section**
+
+**Purpose:** Show academic journey visually (timeline or card layout).
+**Content (use icons + cards):**
+
+- M.Tech (VLSI and Microsystems), IIST (2024–present) – CGPA: 8.41
+- B.Tech (ECE), TKM College of Engineering (2020–2024) – CGPA: 8.59
+- 12th (CBSE) – 91.4%
+- 10th (CBSE) – CGPA 10.0
+
+---
+
+### 4. **Projects Section**
+
+**Purpose:** Highlight technical contributions.
+**Layout idea:** 2-column grid or carousel like yonadhan.online’s “Projects” cards.
+**Show 5–6 key ones (shortened titles):**
+
+1. **ASIC Design for MEMS Accelerometer (SGFET)**
+2. **Low Power Flip-Flop (TSPC)**
+3. **Dual Micro-Heater Flow Sensor**
+4. **Integrated Vehicle Health Management System**
+5. **Posit Adder Design (Verilog)**
+6. _(Optional)_ “Density-Based Traffic Control System”
+
+Each with:
+
+- Short description (2–3 lines)
+- Tags (Verilog, Cadence, CoventorWare)
+- “View Details” button (can link to modal or GitHub page later)
+
+---
+
+### 5. **Experience Section**
+
+**Purpose:** Show industrial exposure.
+**Style:** Card layout like “Experience” on yonadhan.online.
+**Content:**
+
+- **Vikram Sarabhai Space Centre (Intern)** – LabVIEW, PXI, Payloads
+- **Revolt (Marketing Intern)** – Campaign & branding strategy
+
+---
+
+### 6. **Positions & Leadership**
+
+**Purpose:** Demonstrate teamwork & leadership.
+**Display as badges or grid:**
+
+- Finance Head – ISTE
+- Content Team – IEEE CASS
+- Hospitality Head – HESTA’24
+- TEDx, Hult Prize, Alumni Wing, etc.
+
+---
+
+### 7. **Publications Section**
+
+**Purpose:** Academic credibility.
+**Style:** Card with title, year, and DOI link.
+Example:
+
+> “Integrated Vehicle Health Management System: MATLAB Simulink”
+> _International Research Journal on Advanced Science Hub (2024)_ > [DOI: 10.47392/IRJASH.2024.008](https://doi.org/10.47392/IRJASH.2024.008)
+
+---
+
+### 8. **Skills Section**
+
+**Purpose:** Show technical + soft skills visually.
+**Use grouped chips or progress bars:**
+
+- **Technical:** Verilog, Comsol, Cadence, CoventorWare, Matlab, PIC
+- **Soft:** Leadership, Problem-solving, Communication
+- **Interests:** Analog Electronics, FPGA, Technology, Football, Travel
+
+---
+
+### 9. **Contact Section**
+
+**Purpose:** Easy outreach.
+**Include:**
+
+- Contact form (Name, Email, Message)
+- Social links (LinkedIn, Gmail)
+- Location tag (“Trivandrum, Kerala, India”)
+- Footer credit: “© 2025 Athil Shaji | Designed by Yonadhan MM”
+
+---
+
+## ⚙️ Optional Enhancements
+
+- **Theme toggle (dark/light)**
+- **Scroll animations** using `framer-motion`
+- **Download Resume button** with direct link to PDF
+- **Favicon & SEO setup**
+
+---
