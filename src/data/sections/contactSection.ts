@@ -4,27 +4,27 @@ export const contactSectionData = {
     email: 'adhilshajiepson@gmail.com',
     phone: '+91 8078147924',
     location: 'Trivandrum, Kerala, India',
-    linkedin: 'https://www.linkedin.com/in/athil-shaji-747326206/'
+    linkedin: 'https://www.linkedin.com/in/athil-shaji-747326206/',
   },
   socialLinks: [
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/athil-shaji-747326206/',
-      icon: '🔗'
+      icon: '🔗',
     },
     {
       name: 'Email',
       url: 'mailto:adhilshajiepson@gmail.com',
-      icon: '📧'
+      icon: '📧',
     },
     {
       name: 'Phone',
       url: 'tel:+918078147924',
-      icon: '📞'
-    }
+      icon: '📞',
+    },
   ],
   footer: {
     copyright: '© 2025 Athil Shaji',
-    designedBy: 'Designed by Yonadhan MM'
-  }
+    designedBy: 'Designed by Yonadhan M M',
+  },
 }
