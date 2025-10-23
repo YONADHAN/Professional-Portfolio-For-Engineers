@@ -6,17 +6,17 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen py-20 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+      className="min-h-screen py-20 bg-blue-50 text-blue-900"
     >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-900">
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mt-4">
+            <p className="text-xl text-blue-700 mt-4">
               Let's discuss opportunities and collaborations
             </p>
           </div>
@@ -25,80 +25,45 @@ export default function ContactSection() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                <h3 className="text-2xl font-bold text-blue-900 mb-6">
                   Contact Information
                 </h3>
                 
                 {/* Personal Info */}
                 <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-2xl">👤</div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">
-                        {contactSectionData.personalInfo.name}
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        VLSI & Microsystems Engineer
-                      </p>
+                  {[
+                    { icon: '👤', label: contactSectionData.personalInfo.name, sub: 'VLSI & Microsystems Engineer' },
+                    { icon: '📧', label: 'Email', sub: contactSectionData.personalInfo.email, link: `mailto:${contactSectionData.personalInfo.email}` },
+                    { icon: '📞', label: 'Phone', sub: contactSectionData.personalInfo.phone, link: `tel:${contactSectionData.personalInfo.phone}` },
+                    { icon: '📍', label: 'Location', sub: contactSectionData.personalInfo.location },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center space-x-4">
+                      <div className="text-2xl">{item.icon}</div>
+                      <div>
+                        <p className="font-semibold text-blue-900">{item.label}</p>
+                        {item.link ? (
+                          <a href={item.link} className="text-blue-600 hover:underline">{item.sub}</a>
+                        ) : (
+                          <p className="text-blue-700">{item.sub}</p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="text-2xl">📧</div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">
-                        Email
-                      </p>
-                      <a 
-                        href={`mailto:${contactSectionData.personalInfo.email}`}
-                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                      >
-                        {contactSectionData.personalInfo.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="text-2xl">📞</div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">
-                        Phone
-                      </p>
-                      <a 
-                        href={`tel:${contactSectionData.personalInfo.phone}`}
-                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                      >
-                        {contactSectionData.personalInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="text-2xl">📍</div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">
-                        Location
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {contactSectionData.personalInfo.location}
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
                 {/* Social Links */}
                 <div className="mt-8">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                  <h4 className="text-lg font-semibold text-blue-900 mb-4">
                     Connect With Me
                   </h4>
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-4">
                     {contactSectionData.socialLinks.map((link, index) => (
                       <a
                         key={index}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center space-x-2"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition flex items-center space-x-2"
                       >
                         <span>{link.icon}</span>
                         <span>{link.name}</span>
@@ -111,55 +76,33 @@ export default function ContactSection() {
 
             {/* Contact Form */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-bold text-blue-900 mb-6">
                 Send a Message
               </h3>
               
               <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="Your full name"
-                  />
-                </div>
+                {[
+                  { id: 'name', type: 'text', label: 'Full Name', placeholder: 'Your full name' },
+                  { id: 'email', type: 'email', label: 'Email Address', placeholder: 'your.email@example.com' },
+                  { id: 'subject', type: 'text', label: 'Subject', placeholder: "What's this about?" },
+                ].map((field, idx) => (
+                  <div key={idx}>
+                    <label htmlFor={field.id} className="block text-sm font-semibold text-blue-900 mb-2">
+                      {field.label}
+                    </label>
+                    <input
+                      type={field.type}
+                      id={field.id}
+                      name={field.id}
+                      required
+                      placeholder={field.placeholder}
+                      className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-blue-900"
+                    />
+                  </div>
+                ))}
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    placeholder="What's this about?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-900 dark:text-white mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-blue-900 mb-2">
                     Message
                   </label>
                   <textarea
@@ -167,8 +110,8 @@ export default function ContactSection() {
                     name="message"
                     rows={6}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
                     placeholder="Tell me about your project or opportunity..."
+                    className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-blue-900 resize-none"
                   ></textarea>
                 </div>
 
@@ -184,62 +127,32 @@ export default function ContactSection() {
 
           {/* Quick Contact Options */}
           <div className="mt-16 grid md:grid-cols-3 gap-6">
-            <div className="text-center bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl mb-4">💼</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                Career Opportunities
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Looking for VLSI design, embedded systems, or research positions
-              </p>
-              <a
-                href={`mailto:${contactSectionData.personalInfo.email}?subject=Career Opportunity`}
-                className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
-              >
-                Send Opportunity
-              </a>
-            </div>
-
-            <div className="text-center bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                Collaboration
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Interested in research collaborations and joint projects
-              </p>
-              <a
-                href={`mailto:${contactSectionData.personalInfo.email}?subject=Collaboration Proposal`}
-                className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
-              >
-                Propose Collaboration
-              </a>
-            </div>
-
-            <div className="text-center bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-              <div className="text-4xl mb-4">💬</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                General Inquiry
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Have questions about my work or want to connect?
-              </p>
-              <a
-                href={`mailto:${contactSectionData.personalInfo.email}?subject=General Inquiry`}
-                className="text-blue-600 dark:text-blue-400 hover:underline font-semibold"
-              >
-                Get In Touch
-              </a>
-            </div>
+            {[
+              { icon: '💼', title: 'Career Opportunities', desc: 'Looking for VLSI design, embedded systems, or research positions', subject: 'Career Opportunity' },
+              { icon: '🤝', title: 'Collaboration', desc: 'Interested in research collaborations and joint projects', subject: 'Collaboration Proposal' },
+              { icon: '💬', title: 'General Inquiry', desc: 'Have questions about my work or want to connect?', subject: 'General Inquiry' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">{item.title}</h3>
+                <p className="text-blue-700 mb-4">{item.desc}</p>
+                <a
+                  href={`mailto:${contactSectionData.personalInfo.email}?subject=${encodeURIComponent(item.subject)}`}
+                  className="text-blue-600 hover:underline font-semibold"
+                >
+                  {item.title === 'Career Opportunities' ? 'Send Opportunity' : item.title === 'Collaboration' ? 'Propose Collaboration' : 'Get In Touch'}
+                </a>
+              </div>
+            ))}
           </div>
 
           {/* Footer */}
-          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <div className="mt-16 pt-8 border-t border-blue-200">
             <div className="text-center">
-              <p className="text-gray-600 dark:text-gray-400 mb-2">
+              <p className="text-blue-700 mb-2">
                 {contactSectionData.footer.copyright}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-500">
+              <p className="text-sm text-blue-500">
                 {contactSectionData.footer.designedBy}
               </p>
             </div>

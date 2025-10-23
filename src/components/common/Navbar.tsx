@@ -39,7 +39,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-blue-100'
           : 'bg-transparent'
       }`}
     >
@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">AS</span>
             </div>
-            <span className="font-bold text-gray-900 dark:text-white">
+            <span className="font-bold text-gray-900">
               Athil Shaji
             </span>
           </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item.name}
               </button>
@@ -71,7 +71,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-blue-50"
           >
             <svg
               className="w-6 h-6"
@@ -100,13 +100,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-2 p-4">
+          <div className="lg:hidden bg-white border border-blue-100 rounded-lg shadow-lg mt-2 p-4">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                  className="text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
                 >
                   {item.name}
                 </button>
